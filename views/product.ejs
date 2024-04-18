@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn:hover
+        {
+            color: black !important;
+            background-color: white !important;
+            box-shadow: 5px 5px 5px 5px black !important; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center ; font-size: 40px; font-weight: 700; color: blue; ">ADD PRODUCT</h1>
+    <form method="post">
+        <table align="center" style="font-size: 30px;">
+            <tr>
+                <td>
+                    name :
+                </td>
+                <td>
+                    <input type="text" name="name" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    quantity :
+                </td>
+                <td>
+                    <input type="number" name="quantity" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    price :
+                </td>
+                <td>
+                    <input type="number" name="price" id="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="save" value="save" id="" style="height: 50px; width: 100px; background-color: black; color: white; font-size: 20px; margin-top: 50px;" class="btn">
+                </td>
+                <td>
+                    <input type="reset" name="reset" id="" style="height: 50px; width: 100px; background-color: black; color: white; font-size: 20px; margin-top: 50px;" class="btn">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <h1>view product</h1>
+
+
+    <table border="1">
+        <tr>
+            
+            <th>name</th>
+            <th>quantity</th>
+            <th>price</th>
+            <th>delete</th>
+            <th>update</th>
+        </tr>
+
+        <% results.forEach(function(product){ %>
+            <tr>
+                <td><%= product.product_name %></td>
+                <td><%= product.qty %></td>
+                <td><%= product.price %></td>
+                <td><a href="delete/<%= product.id %>">delete</a></td>
+                <td><a href="update/<%= product.id %>">update</a></td>
+            </tr>
+        <% }); %>
+
+
+    </table>
+</body>
+
+</html>

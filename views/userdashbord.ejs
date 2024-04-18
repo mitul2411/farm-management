@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 style="text-align: center ; font-size: 40px; font-weight: 700; color: blue; ">user dashbord</h1>
+
+    <table border="1" width="100%" style=" padding: 20px; font-size: 30px; text-align: center; background-color: bisque ;">
+        <tr style="padding: 30px;">
+            <th style="padding: 30px;">name</th>
+            <th style="padding: 30px;">quntity</th>
+            <th style="padding: 30px;">price</th>
+            <th style="padding: 30px;">bynow</th>
+        </tr>
+
+
+        <% results.forEach(function(product){ %>
+            
+
+            <tr style="padding: 30px;">
+                <td style="padding: 30px;"><%= product.product_name %></td>
+                <td style="padding: 30px;"><%= product.qty %></td>
+                <td style="padding: 30px;"><%= product.price %></td>
+                <td style="padding: 30px;"><a href="/buy" >bye</a></td>
+            </tr>
+
+
+        <% }); %>
+
+    </table>
+
+</body>
+</html>
